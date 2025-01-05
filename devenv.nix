@@ -1,20 +1,11 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:
+{ pkgs, lib, config, inputs, ... }:
 
 {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [
-    pkgs.git
-    pkgs.nodejs
-  ];
+  packages = [ pkgs.git pkgs.nodejs ];
 
   # https://devenv.sh/languages/
   languages.rust.enable = true;
@@ -24,12 +15,9 @@
     reactNative.enable = true;
     platforms.version = [ "35" ];
     systemImageTypes = [ "google_apis_playstore" ];
-    abis = [
-      "arm64-v8a"
-      "x86_64"
-    ];
+    abis = [ "arm64-v8a" "x86_64" ];
     platformTools.version = "35.0.2";
-    buildTools.version = [ "34.0.0" ];
+    buildTools.version = [ "35.0.0" ];
     emulator = {
       enable = true;
       version = "35.2.5";
